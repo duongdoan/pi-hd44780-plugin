@@ -1,7 +1,7 @@
 # D I S C O N T I N U E D
 
 ## volumio-lcd-line-display-plugin
-Plugin for the HD44780 LCD for Volumio 2
+Plugin for the HD44780 LCD for Volumio & Moode
 
 Package should install, i2c is confirmed to work on any Pi, GPIO only on Pi1 models (driver is recompiled, just needs testing).
 
