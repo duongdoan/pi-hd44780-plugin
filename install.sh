@@ -1,6 +1,6 @@
 ## HD44780 installation script
 echo "Installing HD44780 dependencies"
-INSTALLING="/home/volumio/hd44780-plugin.installing"
+INSTALLING="/home/pi/hd44780-plugin.installing"
 
 if [ ! -f $INSTALLING ]; then
 
@@ -9,19 +9,19 @@ if [ ! -f $INSTALLING ]; then
 	apt-get update
 	DEBIAN_FRONTEND=noninteractive apt-get --assume-yes install -y -q python-smbus i2c-tools lcdproc python-mpd python-pip zip
 
-	pip install mpdlcd
+	pip install 'mpdlcd==0.4.3'
 
 	wget -O /etc/mpdlcd.conf https://raw.githubusercontent.com/Saiyato/volumio-hd44780-plugin/master/templates/mpdlcd.conf
 
 	# Driver installation
-	mkdir /home/volumio/raspdrivers
+	mkdir /home/pi/raspdrivers
 	# ARMv6 -> rPi 1 A/A+/B/B+/Zero
 	# ARMv7 -> rPi 2/3
-	wget -O /home/volumio/raspdrivers/hd44780.so https://github.com/Saiyato/volumio-hd44780-plugin/raw/master/driver/hd44780.so
+	wget -O /home/pi/raspdrivers/hd44780.so https://github.com/duongdoan/pi-hd44780-plugin/raw/master/driver/hd44780.so
 
 	# Remove and create LCDd.conf
 	rm /etc/LCDd.conf
-	wget -O /etc/LCDd.conf https://raw.githubusercontent.com/Saiyato/volumio-hd44780-plugin/master/templates/LCDd.conf
+	wget -O /etc/LCDd.conf https://raw.githubusercontent.com/duongdoan/pi-hd44780-plugin/master/templates/LCDd.conf
 	
 	# Place a patched wrapper to remove <Unknown> from the radio string
 	mv /usr/local/lib/python2.7/dist-packages/mpdlcd/mpdwrapper.py /usr/local/lib/python2.7/dist-packages/mpdlcd/mpdwrapper.py.bak
