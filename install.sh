@@ -11,7 +11,7 @@ if [ ! -f $INSTALLING ]; then
 
 	pip install 'mpdlcd==0.4.3'
 
-	wget -O /etc/mpdlcd.conf https://raw.githubusercontent.com/Saiyato/volumio-hd44780-plugin/master/templates/mpdlcd.conf
+	wget -O /etc/mpdlcd.conf https://raw.githubusercontent.com/duongdoan/volumio-hd44780-plugin/master/templates/mpdlcd.conf
 
 	# Driver installation
 	mkdir /home/pi/raspdrivers
