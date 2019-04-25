@@ -50,6 +50,15 @@ The configuration can be found in /etc/mpdlcd.conf
 
 Removed the node_modules from the package, this will increase installation time, but installation will succeed in pre- and post 2.411 versions of Volumio.
 
+## Enable i2c
+Open SSH connection to Moode/Volumio
+
+Enable i2c:
+sudo raspi-config
+Select 5 Interfacing Options
+Select P5 I2C
+Select "Yes" when asked "Would you like the ARM I2C interface to be enabled?"
+
 ## Install
 Open SSH connection to Moode/Volumio
 
