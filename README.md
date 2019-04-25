@@ -49,3 +49,14 @@ The configuration can be found in /etc/mpdlcd.conf
 ### Update 26-06-2018
 
 Removed the node_modules from the package, this will increase installation time, but installation will succeed in pre- and post 2.411 versions of Volumio.
+
+## Install
+Open SSH connection to Moode/Volumio
+
+
+git pull https://github.com/duongdoan/pi-hd44780-plugin.git
+cd pi-hd44780-plugin
+
+chmod u+x install.sh
+sudo ./install.sh
+
