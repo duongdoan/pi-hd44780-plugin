@@ -25,7 +25,12 @@ if [ ! -f $INSTALLING ]; then
 	
 	# Place a patched wrapper to remove <Unknown> from the radio string
 	mv /usr/local/lib/python2.7/dist-packages/mpdlcd/mpdwrapper.py /usr/local/lib/python2.7/dist-packages/mpdlcd/mpdwrapper.py.bak
-	wget -O /usr/local/lib/python2.7/dist-packages/mpdlcd/mpdwrapper.py https://raw.githubusercontent.com/Saiyato/volumio-hd44780-plugin/master/templates/mpdwrapper.py
+	wget -O /usr/local/lib/python2.7/dist-packages/mpdlcd/mpdwrapper.py https://raw.githubusercontent.com/duongdoan/pi-hd44780-plugin/master/templates/mpdwrapper.py
+
+	#Patch to display bit rate
+	mv /usr/local/lib/python2.7/dist-packages/mpdlcd/display_fields.py /usr/local/lib/python2.7/dist-packages/mpdlcd/display_fields.py.bak
+	wget -O /usr/local/lib/python2.7/dist-packages/mpdlcd/display_fields.py https://raw.githubusercontent.com/duongdoan/pi-hd44780-plugin/master/templates/display_fields.py
+	
 
 	rm /etc/init.d/mpdlcd
 	echo "#! /bin/sh
