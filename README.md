@@ -69,3 +69,13 @@ cd pi-hd44780-plugin
 chmod u+x install.sh
 sudo ./install.sh
 
+## Autostart
+sudo nano /etc/rc.local
+
+Add lines before Exit 0:
+
+service LCDd start
+mpdlcd ––no-syslog &
+
+Restart pi:
+sudo shutdown -r now
